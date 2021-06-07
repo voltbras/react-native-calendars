@@ -1,19 +1,19 @@
+import { Map } from 'immutable';
 import _ from 'lodash';
 import memoize from 'memoize-one';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { FlatList, Text, View } from 'react-native';
 import XDate from 'xdate';
-
-import React, {Component} from 'react';
-import {FlatList, View, Text} from 'react-native';
-import {Map} from 'immutable';
-
-import {extractComponentProps} from '../component-updater';
-import {weekDayNames, sameWeek} from '../dateutils';
-import {toMarkingFormat} from '../interface';
-import styleConstructor from './style';
-import asCalendarConsumer from './asCalendarConsumer';
 import CalendarList from '../calendar-list';
+import { extractComponentProps } from '../component-updater';
+import { sameWeek, weekDayNames } from '../dateutils';
 import Week from '../expandableCalendar/week';
+import { toMarkingFormat } from '../interface';
+import asCalendarConsumer from './asCalendarConsumer';
+import styleConstructor from './style';
+
+
 
 const commons = require('./commons');
 const UPDATE_SOURCES = commons.UPDATE_SOURCES;
@@ -126,7 +126,7 @@ class WeekCalendar extends Component {
       const {items} = this.state;
       this.page = newPage;
 
-      _.invoke(this.props.context, 'setDate', items[this.page], UPDATE_SOURCES.WEEK_SCROLL);
+      // _.invoke(this.props.context, 'setDate', items[this.page], UPDATE_SOURCES.WEEK_SCROLL);
 
       if (this.page === items.length - 1) {
         for (let i = 0; i <= NUMBER_OF_PAGES; i++) {
