@@ -124,7 +124,7 @@ class WeekCalendar extends Component {
 
     if (this.page !== newPage) {
       const {items} = this.state;
-      this.page = newPage;
+      this.page = newPage;  
 
       // _.invoke(this.props.context, 'setDate', items[this.page], UPDATE_SOURCES.WEEK_SCROLL);
 
