@@ -1,5 +1,5 @@
-import {isToday, isDateNotInTheRange, sameMonth} from './dateutils';
-import {parseDate, toMarkingFormat} from './interface';
+import { isDateNotInTheRange, isToday } from './dateutils';
+import { parseDate, toMarkingFormat } from './interface';
 
 function getState(day, current, props) {
   const {minDate, maxDate, disabledByDefault, context} = props;
@@ -16,9 +16,9 @@ function getState(day, current, props) {
     state = 'disabled';
   } else if (isDateNotInTheRange(_minDate, _maxDate, day)) {
     state = 'disabled';
-  } else if (!sameMonth(day, current)) {
+  } /* else if (!sameMonth(day, current)) {
     state = 'disabled';
-  }
+  } */
 
   return state;
 }
