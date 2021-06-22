@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
-
-import React, {PureComponent} from 'react';
-import {View} from 'react-native';
-
-import dateutils from '../dateutils';
-import {parseDate, toMarkingFormat} from '../interface';
-import {getState} from '../day-state-manager';
-import {extractComponentProps} from '../component-updater';
-import styleConstructor from './style';
+import React, { PureComponent } from 'react';
+import { View } from 'react-native';
 import Calendar from '../calendar';
 import Day from '../calendar/day/index';
+import { extractComponentProps } from '../component-updater';
+import dateutils from '../dateutils';
+import { getState } from '../day-state-manager';
+import { parseDate, toMarkingFormat } from '../interface';
+import styleConstructor from './style';
+
+
 // import BasicDay from '../calendar/day/basic';
 
 class Week extends PureComponent {
@@ -29,6 +29,10 @@ class Week extends PureComponent {
 
   getWeek(date) {
     return dateutils.getWeekDates(date, this.props.firstDay);
+  }
+
+  shouldComponentUpdate() {
+    return false
   }
 
   // renderWeekNumber (weekNumber) {
