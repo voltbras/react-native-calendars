@@ -35,7 +35,9 @@ class WeekCalendar extends Component {
     /** whether to have shadow/elevation for the calendar */
     allowShadow: PropTypes.bool,
     /** whether to hide the names of the week days */
-    hideDayNames: PropTypes.bool
+    hideDayNames: PropTypes.bool,
+    /** triggers when the week changes */
+    onWeekChange: PropTypes.any
   };
 
   static defaultProps = {
@@ -127,6 +129,7 @@ class WeekCalendar extends Component {
       this.page = newPage;  
 
       _.invoke(this.props.context, 'setDate', items[this.page], UPDATE_SOURCES.WEEK_SCROLL);
+      this.props.onWeekChange(items[this.page]);
 
       if (this.page === items.length - 1) {
         for (let i = 0; i <= NUMBER_OF_PAGES; i++) {
