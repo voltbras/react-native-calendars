@@ -31,10 +31,6 @@ class Week extends PureComponent {
     return dateutils.getWeekDates(date, this.props.firstDay);
   }
 
-  shouldComponentUpdate() {
-    return false
-  }
-
   // renderWeekNumber (weekNumber) {
   //   return <BasicDay key={`week-${weekNumber}`} theme={this.props.theme} marking={{disableTouchEvent: true}} state='disabled'>{weekNumber}</BasicDay>;
   // }
